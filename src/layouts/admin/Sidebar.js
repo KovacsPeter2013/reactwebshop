@@ -8,9 +8,13 @@ const Sidebar = () => {
                     <div className="sb-sidenav-menu">
                         <div className="nav">
                             <div className="sb-sidenav-menu-heading">Core</div>
-                            <Link to="" className="nav-link" href="index.html">
+                            <Link to="/admin/dashboard" className="nav-link" href="#">
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
-                                Dashboard
+                                Irányítópult
+                            </Link>
+                            <Link to="/admin/profil" className="nav-link" href="#">
+                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                                Profil
                             </Link>
                             <div className="sb-sidenav-menu-heading">Interface</div>
                             <Link to="" className="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">

@@ -4,6 +4,8 @@ import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 import '../../assets/admin/css/styles.css';
 import '../../assets/admin/js/scripts.js';
+
+
 const MasterLayout = () => {
 
   return (
@@ -17,7 +19,7 @@ const MasterLayout = () => {
 
         <div id="layoutSidenav_content">
             <main>
-                Fő fájl
+               Irányítópult
             </main>
             <Footer />
         </div>
