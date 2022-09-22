@@ -4,18 +4,13 @@ import Footer from "../../layouts/admin/Footer";
 import Sidebar from "../../layouts/admin/Sidebar";
 const Profile = () => {
   return (
-    <div className="sb-nav-fixed">
+    <div className="wrapper">
       <Navbar />
 
-      <div id="layoutSidenav">
-        <div id="layoutSidenav_nav">
-          <Sidebar />
-        </div>
+      <Sidebar />
+      <div className="content-wrapper">
 
-        <div id="layoutSidenav_content">
-          <main>Profil</main>
-          <Footer />
-        </div>
+      <h1>Profile</h1>
       </div>
     </div>
   );

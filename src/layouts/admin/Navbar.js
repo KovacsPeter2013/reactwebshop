@@ -3,31 +3,126 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
-    <nav className="sb-topnav navbar navbar-expand navbar-dark bg-dark">
- 
-    <Link to="/admin" className="navbar-brand ps-3" >Start Bootstrap</Link>
-  
-    <button className="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle"><i className="fas fa-bars"></i></button>
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
    
-    <form className="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-        <div className="input-group">
-            <input className="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-            <button className="btn btn-primary" id="btnNavbarSearch" type="button"><i className="fas fa-search"></i></button>
-        </div>
-    </form>
-   
-    <ul className="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-        <li className="nav-item dropdown">
-            <Link to="" className="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i className="fas fa-user fa-fw"></i></Link>
-            <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <li><Link to="#" className="dropdown-item" href="#!">Settings</Link></li>
-                <li><Link to="#" className="dropdown-item" href="#!">Activity Log</Link></li>
-                <li><hr className="dropdown-divider" /></li>
-                <li><Link to="#" className="dropdown-item" href="#!">Logout</Link></li>
-            </ul>
-        </li>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <Link to="#" class="nav-link" data-widget="pushmenu"><i class="fas fa-bars"></i></Link>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <Link to="#" class="nav-link">Kezdőlap</Link>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <Link to="#" class="nav-link">Kapcsolat</Link>
+      </li>
     </ul>
-</nav>
+
+  
+    <form class="form-inline ml-3">
+      <div class="input-group input-group-sm">
+        <input class="form-control form-control-navbar" type="search" placeholder="Keresés" aria-label="Search"/>
+        <div class="input-group-append">
+          <button class="btn btn-navbar" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+
+    
+    <ul class="navbar-nav ml-auto">
+   
+      <li class="nav-item dropdown">
+        <Link to="#" class="nav-link" data-toggle="dropdown" >
+          <i class="far fa-comments"></i>
+          <span class="badge badge-danger navbar-badge">3</span>
+        </Link>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <Link to="#" class="dropdown-item">
+           
+            <div class="media">
+              <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle"/>
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Brad Diesel
+                  <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">Call me whenever you can...</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+         
+          </Link>
+          <div class="dropdown-divider"></div>
+          <Link to="#" class="dropdown-item">
+          
+            <div class="media">
+              <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3"/>
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  John Pierce
+                  <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">I got your message bro</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+           
+          </Link>
+          <div class="dropdown-divider"></div>
+          <Link to="#"  class="dropdown-item">
+           
+            <div class="media">
+              <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3"/>
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Nora Silvester
+                  <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">The subject goes here</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+           
+          </Link>
+          <div class="dropdown-divider"></div>
+          <Link to="#"  class="dropdown-item dropdown-footer">See All Messages</Link>
+        </div>
+      </li>
+     
+      <li class="nav-item dropdown">
+        <Link to="#" class="nav-link" data-toggle="dropdown">
+          <i class="far fa-bell"></i>
+          <span class="badge badge-warning navbar-badge">15</span>
+        </Link>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <span class="dropdown-item dropdown-header">15 Notifications</span>
+          <div class="dropdown-divider"></div>
+          <Link to="#"  class="dropdown-item">
+            <i class="fas fa-envelope mr-2"></i> 4 new messages
+            <span class="float-right text-muted text-sm">3 mins</span>
+          </Link>
+          <div class="dropdown-divider"></div>
+          <Link to="#"  class="dropdown-item">
+            <i class="fas fa-users mr-2"></i> 8 friend requests
+            <span class="float-right text-muted text-sm">12 hours</span>
+          </Link>
+          <div class="dropdown-divider"></div>
+          <Link to="#"  class="dropdown-item">
+            <i class="fas fa-file mr-2"></i> 3 new reports
+            <span class="float-right text-muted text-sm">2 days</span>
+          </Link>
+          <div class="dropdown-divider"></div>
+          <Link to="#"  class="dropdown-item dropdown-footer">See All Notifications</Link>
+        </div>
+      </li>
+      <li class="nav-item">
+        <Link to="#" class="nav-link" data-widget="control-sidebar" data-slide="true">
+          <i class="fas fa-th-large"></i>
+        </Link>
+      </li>
+    </ul>
+  </nav>
   )
 }
 
