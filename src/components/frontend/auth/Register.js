@@ -7,6 +7,20 @@ import swal from 'sweetalert'
 
 const Register = () => {
 
+
+
+  const isLogin = localStorage.getItem('auth_token');
+
+  if(isLogin){
+    window.location.href ='admin/dashboard';
+    Register = false;
+  }
+
+
+
+
+
+
   const redirect = () =>{
     window.location.href = "/bejelentkezes";
   }
@@ -103,7 +117,8 @@ const Register = () => {
               <div className="icheck-primary">
                 <input type="checkbox" id="agreeTerms" name="terms" value="agree"/>
                 <label for="agreeTerms" required>
-                 Egyetértek a <Link to="#">terms-el</Link>
+                 Egyetértek a <br/>
+                 <Link to="#">Felhasználási feltételekkel</Link>
                 </label>
               </div>
             </div>

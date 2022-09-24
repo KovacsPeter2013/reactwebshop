@@ -2,7 +2,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
+
+
 const Sidebar = () => {
+// const checkUser = localStorage.getItem('auth_name');
+// // if(!checkUser){
+
+// //   window.location.href ='/bejelentkezes';
+// // }
+
+
   return (
     
     <aside className="main-sidebar sidebar-dark-primary elevation-4">

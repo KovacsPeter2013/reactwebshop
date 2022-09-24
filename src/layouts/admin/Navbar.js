@@ -1,7 +1,42 @@
 
+import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import swal from 'sweetalert'
+
+
+
+
 const Navbar = () => {
+
+  const redirect = () =>{
+    window.location.href = "/bejelentkezes";
+  }
+
+
+
+
+const logout = (e) =>{
+  e.preventDefault();
+  
+  axios.post(`/api/logout`).then(res => {
+
+    if(res.data.status === 200){
+
+      localStorage.removeItem('auth_token');
+      localStorage.removeItem('auth_name');
+      swal("Sikeres kilépés (React)",{ icon: "success",});
+      setTimeout(function(){redirect()}, 2000);
+    }
+
+  });
+}
+
+
+
+
+
+
   return (
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
    
@@ -92,35 +127,15 @@ const Navbar = () => {
      
       <li class="nav-item dropdown">
         <Link to="#" class="nav-link" data-toggle="dropdown">
-          <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">15</span>
+          <i class="fa fa-sign-out"></i>
+         
         </Link>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right text-center">
           <span class="dropdown-item dropdown-header">15 Notifications</span>
           <div class="dropdown-divider"></div>
-          <Link to="#"  class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 4 new messages
-            <span class="float-right text-muted text-sm">3 mins</span>
-          </Link>
-          <div class="dropdown-divider"></div>
-          <Link to="#"  class="dropdown-item">
-            <i class="fas fa-users mr-2"></i> 8 friend requests
-            <span class="float-right text-muted text-sm">12 hours</span>
-          </Link>
-          <div class="dropdown-divider"></div>
-          <Link to="#"  class="dropdown-item">
-            <i class="fas fa-file mr-2"></i> 3 new reports
-            <span class="float-right text-muted text-sm">2 days</span>
-          </Link>
-          <div class="dropdown-divider"></div>
-          <Link to="#"  class="dropdown-item dropdown-footer">See All Notifications</Link>
+          <button onClick={logout} className='btn btbn-default' type='button' >Kilépés</button>
         </div>
-      </li>
-      <li class="nav-item">
-        <Link to="#" class="nav-link" data-widget="control-sidebar" data-slide="true">
-          <i class="fas fa-th-large"></i>
-        </Link>
-      </li>
+      </li>   
     </ul>
   </nav>
   )

@@ -11,6 +11,23 @@ import swal from 'sweetalert'
 
 const Login = () => {
 
+const isLogin = localStorage.getItem('auth_token');
+
+if(isLogin){
+  window.location.href ='admin/dashboard';
+Login = false;
+
+
+}
+
+
+
+  const redirect = () =>{
+    window.location.href = "/admin/dashboard";
+  }
+
+
+
   const [loginInput, setLogin] = useState({
 
     email: '',
@@ -38,9 +55,10 @@ const Login = () => {
 
       if(res.data.status === 200){
         
-        swal("Sikeres belépés (React)",{ icon: "success",});
         localStorage.setItem('auth_token', res.data.token);
         localStorage.setItem('auth_name', res.data.username);
+        swal("Sikeres belépés (React)",{ icon: "success",});
+         setTimeout(function(){redirect()}, 2000);
         
       }else if (res.data.status === 401){
         
