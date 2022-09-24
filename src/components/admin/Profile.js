@@ -10,7 +10,7 @@ const Profile = () => {
       <Sidebar />
       <div className="content-wrapper">
 
-      <h1>Profile</h1>
+      <h1>Profil</h1>
       </div>
     </div>
   );
