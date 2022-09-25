@@ -4,6 +4,7 @@ import Profile from "./components/admin/Profile";
 import MasterLayout from "./layouts/admin/MasterLayout";
 import Login from "./components/frontend/auth/Login";
 import Register from "./components/frontend/auth/Register";
+import Protected from "./layouts/admin/Protected";
 import axios from 'axios';
 
 
@@ -15,7 +16,7 @@ axios.defaults.headers.post['Accept'] = 'application/json';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 axios.defaults.withCredentials = true;
 
-axios.interceptors.request.use(function(config){
+axios.interceptors.request.use(function(config){ // Ez fontos mert enélkül az api unathorized választ ad
 
   const token = localStorage.getItem('auth_token');
   config.headers.Authorization = token ? `Bearer ${token}` : '';
@@ -32,8 +33,10 @@ function App() {
       <Router>
         <Routes>
           {/* <Route  path='/admin/dashboard/' element={<MasterLayout />}/> */}
-          <Route path="/admin/dashboard" element={<MasterLayout />} />
-          <Route path="/admin/profil" element={<Profile />} />
+          {/* <Route path="/admin/dashboard" element={<MasterLayout />} /> */}
+          <Route path="/admin/dashboard" element={<Protected Cmp={MasterLayout} />} />
+          <Route path="/admin/profil" element={<Protected Cmp={Profile} />} />
+          {/* <Route path="/admin/profil" element={<Profile />} /> */}
           <Route path="/bejelentkezes" element={<Login />} />
           <Route path="/regisztracio" element={<Register />} />
         </Routes>

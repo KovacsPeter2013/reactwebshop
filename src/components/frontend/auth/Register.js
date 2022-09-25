@@ -11,7 +11,7 @@ const Register = () => {
 
   const isLogin = localStorage.getItem('auth_token');
 
-  if(isLogin){
+  if(isLogin){ // Function to prevent login and registration page availability after succesfull login
     window.location.href ='admin/dashboard';
     Register = false;
   }
