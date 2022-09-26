@@ -5,6 +5,7 @@ import MasterLayout from "./layouts/admin/MasterLayout";
 import Login from "./components/frontend/auth/Login";
 import Register from "./components/frontend/auth/Register";
 import Protected from "./layouts/admin/Protected";
+import UserHome from "./pages/UserHome";
 import axios from 'axios';
 
 
@@ -36,6 +37,7 @@ function App() {
           {/* <Route path="/admin/dashboard" element={<MasterLayout />} /> */}
           <Route path="/admin/dashboard" element={<Protected Cmp={MasterLayout} />} />
           <Route path="/admin/profil" element={<Protected Cmp={Profile} />} />
+          <Route path="/userhome" element={<UserHome />} />
           {/* <Route path="/admin/profil" element={<Profile />} /> */}
           <Route path="/bejelentkezes" element={<Login />} />
           <Route path="/regisztracio" element={<Register />} />

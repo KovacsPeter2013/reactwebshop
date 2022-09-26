@@ -20,11 +20,13 @@ Login = false;
 
 
 
-  const redirect = () =>{
+  const redirect_admin = () =>{
     window.location.href = "/admin/dashboard";
   }
 
-
+  const redirect_normal_user = () =>{
+    window.location.href = "/userhome";
+  }
 
   const [loginInput, setLogin] = useState({
 
@@ -56,7 +58,19 @@ Login = false;
         localStorage.setItem('auth_token', res.data.token);
         localStorage.setItem('auth_name', res.data.username);
         swal("Sikeres belépés (React)",{ icon: "success",});
-         setTimeout(function(){redirect()}, 2000);
+
+        if(res.data.role_as === 1){
+          setTimeout(function(){redirect_admin()}, 2000);
+
+        }else{
+          setTimeout(function(){redirect_normal_user()}, 2000);
+
+        }
+
+
+
+       
+        
         
       }else if (res.data.status === 401){
         
