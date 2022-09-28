@@ -2,6 +2,7 @@
 import React from 'react'
 import swal from 'sweetalert';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 const UserNavbar = () => {
 
 
@@ -30,8 +31,8 @@ const UserNavbar = () => {
 
 
   return (
-<nav className="navbar navbar-expand-lg navbar-light bg-light">
-  <a className="navbar-brand" href="#">Navbar</a>
+<nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+  <Link className="navbar-brand" href="#">Navbar</Link>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
@@ -39,18 +40,18 @@ const UserNavbar = () => {
   <div className="collapse navbar-collapse" id="navbarSupportedContent">
     <ul className="navbar-nav mr-auto">
       <li className="nav-item active">
-        <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+        <Link  to="/userhome" className="nav-link" >Home <span className="sr-only">(current)</span></Link>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="#">Link</a>
+        <Link to="/userprofil" className="nav-link">Profil</Link>
       </li>
       <li className="nav-item dropdown">
-        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <Link className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown
-        </a>
+        </Link>
         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a className="dropdown-item" href="#">Action</a>
-          <a className="dropdown-item" href="#">Another action</a>
+          <Link className="dropdown-item" href="#">Action</Link>
+          <Link className="dropdown-item" href="#">Another action</Link>
           <div className="dropdown-divider"></div>
           <button  onClick={logout} className="btn btbn-default">Kilépés</button>
         
@@ -59,8 +60,8 @@ const UserNavbar = () => {
 
     </ul>
     <form className="form-inline my-2 my-lg-0">
-      <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-      <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <input className="form-control mr-sm-2" type="search" placeholder="Keresés" aria-label="Keresés" />
+      <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Keresés</button>
     </form>
   </div>
 </nav>
