@@ -8,6 +8,7 @@ import Protected from "./layouts/admin/Protected";
 import UserHome from "./pages/UserHome";
 import UserProfil from "./pages/UserProfil";
 import axios from 'axios';
+import Category from "./components/admin/Category";
 
 
 
@@ -38,6 +39,7 @@ function App() {
           {/* <Route path="/admin/dashboard" element={<MasterLayout />} /> */}
           <Route path="/admin/dashboard" element={<Protected Cmp={MasterLayout} />} />
           <Route path="/admin/profil" element={<Protected Cmp={Profile} />} />
+          <Route path="/admin/kategoria" element={<Protected Cmp={Category} />} />
           <Route path="/userhome" element={<Protected Cmp={UserHome} />} />
           <Route path="/userprofil" element={<Protected Cmp={UserProfil} />} />
           {/* <Route path="/admin/profil" element={<Profile />} /> */}

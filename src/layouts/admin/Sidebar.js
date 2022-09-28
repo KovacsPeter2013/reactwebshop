@@ -87,11 +87,11 @@ const Sidebar = () => {
             </Link>
           </li>
           <li className="nav-item has-treeview">
-            <Link to="#" className="nav-link">
+            <Link to="/admin/kategoria" className="nav-link">
               <i className="nav-icon fas fa-copy"></i>
               <p>
-                Layout Options
-                <i className="fas fa-angle-left right"></i>
+                Kategória
+                {/* <i className="fas fa-angle-left right"></i> */}
                 {/* <span className="badge badge-info right">6</span> */}
               </p>
             </Link>
@@ -145,7 +145,7 @@ const Sidebar = () => {
               <i className="nav-icon fas fa-chart-pie"></i>
               <p>
                 Charts
-                <i className="right fas fa-angle-left"></i>
+                {/* <i className="right fas fa-angle-left"></i> */}
               </p>
             </Link>
             <ul className="nav nav-treeview">
@@ -174,7 +174,7 @@ const Sidebar = () => {
               <i className="nav-icon fas fa-tree"></i>
               <p>
                 UI Elements
-                <i className="fas fa-angle-left right"></i>
+                {/* <i className="fas fa-angle-left right"></i> */}
               </p>
             </Link>
             <ul className="nav nav-treeview">
@@ -233,7 +233,7 @@ const Sidebar = () => {
               <i className="nav-icon fas fa-edit"></i>
               <p>
                 Forms
-                <i className="fas fa-angle-left right"></i>
+                {/* <i className="fas fa-angle-left right"></i> */}
               </p>
             </Link>
             <ul className="nav nav-treeview">
@@ -268,7 +268,7 @@ const Sidebar = () => {
               <i className="nav-icon fas fa-table"></i>
               <p>
                 Tables
-                <i className="fas fa-angle-left right"></i>
+                {/* <i className="fas fa-angle-left right"></i> */}
               </p>
             </Link>
             <ul className="nav nav-treeview">
