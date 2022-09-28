@@ -6,9 +6,6 @@ import swal from 'sweetalert'
 
 
 
-
-
-
 const Login = () => {
 
 const isLogin = localStorage.getItem('auth_token');
@@ -27,6 +24,7 @@ Login = false;
   const redirect_normal_user = () =>{
     window.location.href = "/userhome";
   }
+  
 
   const [loginInput, setLogin] = useState({
 
@@ -44,7 +42,6 @@ Login = false;
     e.preventDefault();
 
     const data = {
-
       email: loginInput.email,
       password: loginInput.password,
       error_list: [],
@@ -65,12 +62,7 @@ Login = false;
         }else{
           setTimeout(function(){redirect_normal_user()}, 2000);
 
-        }
-
-
-
-       
-        
+        }               
         
       }else if (res.data.status === 401){
         
