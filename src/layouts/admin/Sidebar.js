@@ -170,10 +170,10 @@ const Sidebar = () => {
             </ul>
           </li>
           <li className="nav-item has-treeview">
-            <Link to="#" className="nav-link">
+            <Link to="/admin/add-product" className="nav-link">
               <i className="nav-icon fas fa-tree"></i>
               <p>
-                UI Elements
+               Termék hozzáadás
                 {/* <i className="fas fa-angle-left right"></i> */}
               </p>
             </Link>
@@ -229,10 +229,10 @@ const Sidebar = () => {
             </ul>
           </li>
           <li className="nav-item has-treeview">
-            <Link to="#" className="nav-link">
+            <Link to="/admin/view-product" className="nav-link">
               <i className="nav-icon fas fa-edit"></i>
               <p>
-                Forms
+             Termék szerkesztés
                 {/* <i className="fas fa-angle-left right"></i> */}
               </p>
             </Link>

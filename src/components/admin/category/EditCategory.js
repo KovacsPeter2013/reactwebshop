@@ -19,6 +19,7 @@ const EditCategory = (props) => {
 
 
     const [categoryInput, setCategory] = useState([])
+    const [error, setError] = useState([])
 
 
      const params = useParams()
@@ -49,6 +50,33 @@ const EditCategory = (props) => {
         setCategory({...categoryInput, [e.target.name]: e.target.value})
     }
 
+
+
+    const updateCategory = (e) => {
+      e.preventDefault(); 
+      const editId = params.id;
+      const data = categoryInput;
+      axios.put(`/api/update-category/${editId}`, data).then(res=>{
+
+        if(res.data.status === 200){
+          swal(res.data.message)
+          setError([]) // Ha volt de megszűnt a hiba akkor a setError unset-elése üres tömbbel
+          
+        }else if(res.data.status === 422){
+
+          setError(res.data.errors)
+          swal(res.data.message)
+
+        }else if(res.data.status === 404){
+          swal(res.data.message)
+           setTimeout(function(){redirect()}, 4000);
+        }
+
+      })
+    }
+
+
+
   return (
     
     <>
@@ -60,7 +88,7 @@ const EditCategory = (props) => {
         <h2>Kategória szerkesztése</h2>
         <Link to="/admin/kategoriak" className="btn btn-primary btn-sm float-end">Vissza</Link>
         <br/>
-        <form>
+        <form onSubmit={updateCategory}>
     <ul className="nav nav-tabs" id="myTab" role="tablist">
     <li className="nav-item" role="presentation">
     <button className="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Alapadatok</button>
@@ -76,11 +104,13 @@ const EditCategory = (props) => {
     <div className='form-group mb-3'>
         <label>Slug</label>
         <input type="text" onChange={handleInput}  value={categoryInput.slug} name="slug" className='form-control' required />
+        <small className='text-danger'>{error.slug}</small>
     </div>
 
     <div className='form-group mb-3'>
         <label>Név</label>
         <input type="text" onChange={handleInput}  value={categoryInput.name} name="name" className='form-control' required/>
+        <small className='text-danger'>{error.name}</small>
     </div>
     <div className='form-group mb-3'>
         <label>Leírás</label>
@@ -101,6 +131,7 @@ const EditCategory = (props) => {
   <div className='form-group mb-3'>
         <label>Meta cím</label>
         <input type="text"  onChange={handleInput}  value={categoryInput.meta_title} name="meta_title" className='form-control' required/>
+           <small className='text-danger'>{error.meta_title}</small>
     </div>
 
 

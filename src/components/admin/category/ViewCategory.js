@@ -3,6 +3,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import swal from "sweetalert";
 import Navbar from "../../../layouts/admin/Navbar";
 import Sidebar from "../../../layouts/admin/Sidebar";
 
@@ -27,6 +28,29 @@ const ViewCategory = () => {
     }, [])
 
 
+    const deleteCategory = (e, id) => {
+
+        if( window.confirm("Biztosan törölni szeretnéd ezt a terméket?")){
+        e.preventDefault()
+
+        const thisClicked = e.currentTarget // Az aktuális elemre vagy gombra való kattintás. Biztosítja, hogy azzal történjen törlés amire kattintunk
+        thisClicked.innerText = 'Törlés alatt'
+
+        axios.delete(`/api/delete-category/${id}`).then(res => {
+
+            if(res.data.status === 200){
+                swal(res.data.message)
+                thisClicked.closest("tr").remove() // Eltávolítja a törölt elem táblázat sorát
+            }else if(res.data.status === 404){  
+                
+                swal(res.data.message)
+                thisClicked.innerText = "Törlés"
+             }
+        })
+    }
+    }
+
+
     var viewcategory_HTMLTABLE = ""
     if(loading){
         // return <h4>Kategória betöltése...</h4>
@@ -43,7 +67,7 @@ const ViewCategory = () => {
                         <Link to={`/admin/edit-category/${item.id}`} className="btn btn-success btm-sm">Szerkesztés</Link>
                     </td>
                     <td>
-                        <button type="button " className="btn btn-danger btm-sm">Törlés</button>
+                        <button onClick={(e) => deleteCategory(e, item.id)} type="button " className="btn btn-danger btm-sm">Törlés</button>
                     </td>
                 </tr>
             )
