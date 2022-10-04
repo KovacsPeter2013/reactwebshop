@@ -10,6 +10,14 @@ import Sidebar from '../../../layouts/admin/Sidebar'
 
 const EditCategory = (props) => {
 
+  const redirect = () =>{
+    window.location.href = "/admin/kategoriak";
+  }
+
+
+
+
+
     const [categoryInput, setCategory] = useState([])
 
 
@@ -27,6 +35,8 @@ const EditCategory = (props) => {
 
             }else if(res.data.status === 304){ // Ha kategória nem található az API 304-es hibát ad vissza. Felugró üzenet tájékoztatja a user-t
                 swal(res.data.message)
+                setTimeout(function(){redirect()}, 4000);
+                
             }
 
         })
