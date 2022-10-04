@@ -8,7 +8,10 @@ import Protected from "./layouts/admin/Protected";
 import UserHome from "./pages/UserHome";
 import UserProfil from "./pages/UserProfil";
 import axios from 'axios';
-import Category from "./components/admin/Category";
+import Category from "./components/admin/category/Category";
+import ViewCategory from "./components/admin/category/ViewCategory";
+import EditCategory from "./components/admin/category/EditCategory";
+
 
 
 
@@ -40,6 +43,8 @@ function App() {
           <Route path="/admin/dashboard" element={<Protected Cmp={MasterLayout} />} />
           <Route path="/admin/profil" element={<Protected Cmp={Profile} />} />
           <Route path="/admin/kategoria" element={<Protected Cmp={Category} />} />
+          <Route path="/admin/kategoriak" element={<Protected Cmp={ViewCategory} />} />
+          <Route path="/admin/edit-category/:id" element={<Protected Cmp={EditCategory} />} />
           <Route path="/userhome" element={<Protected Cmp={UserHome} />} />
           <Route path="/userprofil" element={<Protected Cmp={UserProfil} />} />
           {/* <Route path="/admin/profil" element={<Profile />} /> */}

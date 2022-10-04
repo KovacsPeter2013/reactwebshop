@@ -90,7 +90,7 @@ const Sidebar = () => {
             <Link to="/admin/kategoria" className="nav-link">
               <i className="nav-icon fas fa-copy"></i>
               <p>
-                Kategória
+                Kategória hozzáadása
                 {/* <i className="fas fa-angle-left right"></i> */}
                 {/* <span className="badge badge-info right">6</span> */}
               </p>
@@ -141,10 +141,10 @@ const Sidebar = () => {
             </ul>
           </li>
           <li className="nav-item has-treeview">
-            <Link to="#" className="nav-link">
+            <Link to="/admin/kategoriak" className="nav-link">
               <i className="nav-icon fas fa-chart-pie"></i>
               <p>
-                Charts
+                Kategóriák
                 {/* <i className="right fas fa-angle-left"></i> */}
               </p>
             </Link>

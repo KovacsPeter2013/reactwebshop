@@ -598,6 +598,14 @@ progress {
   content: "— ";
 }
 
+.brand-link{
+  text-decoration: none;
+}
+.d-block{
+  text-decoration: none;
+}
+
+
 .img-fluid {
   max-width: 100%;
   height: auto;
