@@ -10,6 +10,13 @@ import Sidebar from '../../../layouts/admin/Sidebar'
 
 const EditProduct = (props) => {
 
+
+
+  const redirect = () =>{
+    window.location.href = "/admin/view-product";
+  }
+
+
 const params = useParams()
  const [categoryList, setCategoryList]  = useState([]) 
  const [productInput, setProduct]  = useState({
@@ -66,16 +73,21 @@ useEffect(() => {
     axios.get(`/api/edit-product/${productid}`).then(res=>{
 
       if(res.data.status === 200){
-        console.log(res.data.product)
+        //console.log(res.data.product)
 
         setProduct(res.data.product);
+
+      }else if(res.data.status === 404){
+
+        swal("Error", "Termék nem található", "error")
+        setTimeout(function(){redirect()}, 3000);
       }
 
     })
 
 }, [params.id])
 
-    const submitProduct = (e) =>{
+    const updateProduct = (e) =>{
         e.preventDefault()
 
         const formData = new FormData();
@@ -96,9 +108,9 @@ useEffect(() => {
         formData.append('status', productInput.status)
 
 
-        
+        const product_id = params.id;
         axios.get('/sanctum/csrf-cookie').then(response => {
-        axios.post(`/api/store-product`, formData).then(res => {
+        axios.post(`/api/update-product/${product_id}`, formData).then(res => {
 
             if(res.data.status === 200){
                 swal(res.data.message)
@@ -122,7 +134,7 @@ useEffect(() => {
         <h2>Termék szerkesztése</h2>
         <br/>
   
-    <form onSubmit={submitProduct} encType='multipart/form-data'>
+    <form onSubmit={updateProduct} encType='multipart/form-data'>
 
             <ul className="nav nav-tabs" id="myTab" role="tablist">
         <li className="nav-item" role="presentation">
@@ -222,6 +234,8 @@ useEffect(() => {
         <div className='form-group mb-3'>
                 <label>Fotó</label>
                     <input type="file" onChange={handleImage} name="image" className='form-control'/>
+                    <br/>
+                    <img src={`http://localhost:8000/${productInput.image}`} width="100px"/>
             </div>
 
 
