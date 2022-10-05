@@ -30,7 +30,7 @@ const EditCategory = (props) => {
 
         
         axios.get(`/api/edit-category/${productid}`).then(res => {
-                console.log(res)
+                //console.log(res)
             if(res.data.status === 200){
                 setCategory(res.data.category) // category: a CategoryController edit funkcióban lévő json válasz kulcsa. értéke pedig az adat
 
