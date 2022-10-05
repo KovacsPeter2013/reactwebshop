@@ -3,7 +3,7 @@ import axios from 'axios'
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import swal from 'sweetalert'
 import Navbar from '../../../layouts/admin/Navbar'
 import Sidebar from '../../../layouts/admin/Sidebar'
@@ -139,8 +139,12 @@ useEffect(() => {
     <div className='wrapper col-md-12'>
     <div className="content-wrapper px-4 ">
     <br/>
-        <h2>Termék szerkesztése</h2>
-        <br/>
+    <div className='card-header'>
+            <h4>
+            Termék szerkesztése
+            <Link to="/admin/view-product" className='btn btn-primary btn-sm float-end'>Termék lista</Link>
+                </h4>
+        </div>
   
     <form onSubmit={updateProduct} encType='multipart/form-data'>
 

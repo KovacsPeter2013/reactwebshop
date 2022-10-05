@@ -14,7 +14,9 @@ import EditCategory from "./components/admin/category/EditCategory";
 import AddProduct from "./components/admin/product/Addproduct";
 import EditProduct from "./components/admin/product/EditProduct";
 import ViewProduct from "./components/admin/product/ViewProduct";
-
+import Home from './components/frontend/Home';
+import About from './components/frontend/About';
+import Contact from './components/frontend/Contact';
 
 
 
@@ -53,7 +55,9 @@ function App() {
           <Route path="/admin/edit-product/:id" element={<Protected Cmp={EditProduct} />} />
           <Route path="/userhome" element={<Protected Cmp={UserHome} />} />
           <Route path="/userprofil" element={<Protected Cmp={UserProfil} />} />
-          {/* <Route path="/admin/profil" element={<Profile />} /> */}
+           <Route path="/" element={<Home />} /> 
+           <Route path="/rolunk" element={<About />} /> 
+           <Route path="/kapcsolat" element={<Contact />} /> 
           <Route path="/bejelentkezes" element={<Login />} />
           <Route path="/regisztracio" element={<Register />} />
         </Routes>
