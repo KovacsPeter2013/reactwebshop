@@ -232,7 +232,7 @@ const Sidebar = () => {
             <Link to="/admin/view-product" className="nav-link">
               <i className="nav-icon fas fa-edit"></i>
               <p>
-             Termék szerkesztés
+             Termék lista
                 {/* <i className="fas fa-angle-left right"></i> */}
               </p>
             </Link>

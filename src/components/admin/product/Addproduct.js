@@ -189,7 +189,7 @@ useEffect(() => {
             </div>
 
         <div className='form-group mb-3'>
-                <label>Eredeti ár</label>
+                <label>Kedvezményes ár</label>
                     <input type="text"  onChange={handleInput} value={productInput.selling_price} name="selling_price" className='form-control'/>
             </div>
 

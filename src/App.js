@@ -13,6 +13,7 @@ import ViewCategory from "./components/admin/category/ViewCategory";
 import EditCategory from "./components/admin/category/EditCategory";
 import AddProduct from "./components/admin/product/Addproduct";
 import EditProduct from "./components/admin/product/EditProduct";
+import ViewProduct from "./components/admin/product/ViewProduct";
 
 
 
@@ -48,7 +49,8 @@ function App() {
           <Route path="/admin/kategoriak" element={<Protected Cmp={ViewCategory} />} />
           <Route path="/admin/edit-category/:id" element={<Protected Cmp={EditCategory} />} />
           <Route path="/admin/add-product" element={<Protected Cmp={AddProduct} />} />
-          <Route path="/admin/view-product" element={<Protected Cmp={EditProduct} />} />
+          <Route path="/admin/view-product" element={<Protected Cmp={ViewProduct} />} />
+          {/* <Route path="/admin/view-product" element={<Protected Cmp={EditProduct} />} /> */}
           <Route path="/userhome" element={<Protected Cmp={UserHome} />} />
           <Route path="/userprofil" element={<Protected Cmp={UserProfil} />} />
           {/* <Route path="/admin/profil" element={<Profile />} /> */}
