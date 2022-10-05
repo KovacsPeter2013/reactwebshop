@@ -50,7 +50,7 @@ function App() {
           <Route path="/admin/edit-category/:id" element={<Protected Cmp={EditCategory} />} />
           <Route path="/admin/add-product" element={<Protected Cmp={AddProduct} />} />
           <Route path="/admin/view-product" element={<Protected Cmp={ViewProduct} />} />
-          {/* <Route path="/admin/view-product" element={<Protected Cmp={EditProduct} />} /> */}
+          <Route path="/admin/edit-product/:id" element={<Protected Cmp={EditProduct} />} />
           <Route path="/userhome" element={<Protected Cmp={UserHome} />} />
           <Route path="/userprofil" element={<Protected Cmp={UserProfil} />} />
           {/* <Route path="/admin/profil" element={<Profile />} /> */}

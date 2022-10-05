@@ -16,6 +16,8 @@ const ViewProduct = () => {
     const [viewProduct, setProduct] = useState([])
 
     useEffect(()=> {          
+
+        document.title = "Terméklista"
         
         axios.get(`/api/view-product`).then(res => {
               
@@ -39,7 +41,7 @@ const ViewProduct = () => {
 
     if(loading){
 
-        return <h4>Betöltés</h4>
+         <h4>Betöltés</h4>
         
     }else{
 
@@ -48,12 +50,12 @@ const ViewProduct = () => {
             return(
                 <tr key={item.id}>
                     <td>{item.id}</td>
-                    <td>{item.category_id}</td>
+                    <td>{item.category.name}</td>
                     <td>{item.name}</td>
                     <td>{item.selling_price}</td>
                     <td><img src={`http://localhost:8000/${item.image}`} width="50px" alt={item.image}/></td>
                 
-                    <td><Link to="edit-product" className='btn btn-success btn-sm '>Szerkesztés</Link></td>
+                    <td><Link to={`/admin/edit-product/${item.id}`} className='btn btn-success btn-sm '>Szerkesztés</Link></td>
                     <td><button type="button" className='btn btn-danger btn-sm '>Törlés</button></td>
                 </tr>
             )
