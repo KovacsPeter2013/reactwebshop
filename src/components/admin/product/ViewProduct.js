@@ -45,7 +45,14 @@ const ViewProduct = () => {
         
     }else{
 
+        var ProductStatus = '';
         display_Productdata = viewProduct.map( (item) => {
+
+            if(item.status == '1'){
+                ProductStatus = 'Aktív';
+            }else if(item.status == '0'){
+                ProductStatus = 'Inaktív';
+            }
 
             return(
                 <tr key={item.id}>
@@ -56,7 +63,7 @@ const ViewProduct = () => {
                     <td><img src={`http://localhost:8000/${item.image}`} width="50px" alt={item.image}/></td>
                 
                     <td><Link to={`/admin/edit-product/${item.id}`} className='btn btn-success btn-sm '>Szerkesztés</Link></td>
-                    <td><button type="button" className='btn btn-danger btn-sm '>Törlés</button></td>
+                    <td>{ProductStatus}</td>
                 </tr>
             )
         })

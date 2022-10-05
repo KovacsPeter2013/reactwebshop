@@ -25,13 +25,9 @@ const params = useParams()
     slug : '',
     name : '',
     description : '',
-
-
     meta_title : '',
     meta_keyword : '',
     meta_descrip : '',
-
-
     selling_price : '',
     original_price : '',
     qty : '',
@@ -39,6 +35,7 @@ const params = useParams()
     featured : '',
     popular : '',
     status : '',
+
  }) 
 
 
@@ -58,6 +55,14 @@ const handleImage = (e) => {
 }
 
 
+// const [allcheckbox, setCheckboxes] = useState([])
+
+// const handleCheckbox = (e) => {
+  
+//   setCheckboxes({...allcheckbox, [e.target.name]:e.target.checked});
+// }
+
+
 useEffect(() => {
     
     axios.get(`/api/all-category`).then(res => {
@@ -68,14 +73,14 @@ useEffect(() => {
         }
     })
 
-    const productid = params.id;
-    
+    const productid = params.id;    
     axios.get(`/api/edit-product/${productid}`).then(res=>{
 
-      if(res.data.status === 200){
-        //console.log(res.data.product)
+      if(res.data.status === 200){    
 
         setProduct(res.data.product);
+       // setCheckboxes(res.data.product);
+    
 
       }else if(res.data.status === 404){
 
@@ -113,11 +118,14 @@ useEffect(() => {
         axios.post(`/api/update-product/${product_id}`, formData).then(res => {
 
             if(res.data.status === 200){
+              
                 swal(res.data.message)
+             
                 
             }else if(res.data.status === 422){
                 swal('Hiba! Termék hozzáadása sikertelen! Lehetséges hiba okok: Túl nagy képméret, nem megfelelő fájlformátum')
-            }
+              }else if(res.data.status === 404)
+              swal('Hiba! Termék nem található')
 
         })
         })
@@ -241,24 +249,33 @@ useEffect(() => {
 
 
         <div class="form-check">
-        <input class="form-check-input" type="checkbox" onChange={handleInput} value={productInput.featured} name="featured"/>
-        <label class="form-check-label" for="flexCheckDefault">
-        Kiemelt
-        </label>
+        <label>Kiemelt</label>
+                <select name="featured" onChange={handleInput} value={productInput.featured} className='form-control'>
+                    <option value="">Válassz </option>
+                    <option value='1'>Igen </option>
+                    <option value='0'>Nem </option>          
+
+                </select>
         </div>
 
 
         <div class="form-check">
-        <input class="form-check-input" type="checkbox" onChange={handleInput} value={productInput.popular} name="popular"/>
-        <label class="form-check-label" for="flexCheckDefault">
-        Népszerű
-        </label>
+        <label>Népszerű</label>
+                <select name="popular" onChange={handleInput} value={productInput.popular} className='form-control'>
+                    <option value="">Válassz </option>
+                    <option value='1'>Igen </option>
+                    <option value='0'>Nem </option>          
+
+                </select>
         </div>
         <div class="form-check">
-        <input class="form-check-input" type="checkbox" onChange={handleInput} value={productInput.status} name="status"/>
-        <label class="form-check-label" for="flexCheckChecked">
-        Státusz
-        </label>
+        <label>Aktív</label>
+                <select name="status" onChange={handleInput} value={productInput.status} className='form-control'>
+                    <option value="">Válassz </option>
+                    <option value='1'>Igen </option>
+                    <option value='0'>Nem </option>          
+
+                </select>
         </div>
             
             </div>
