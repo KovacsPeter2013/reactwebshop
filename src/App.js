@@ -17,7 +17,8 @@ import ViewProduct from "./components/admin/product/ViewProduct";
 import Home from './components/frontend/Home';
 import About from './components/frontend/About';
 import Contact from './components/frontend/Contact';
-
+import Kategoriak from './components/frontend/collections/Kategoriak';
+import ViewCategoryProduct from './components/frontend/collections/ViewCategoryProduct';
 
 
 // Request beaállítása
@@ -57,6 +58,8 @@ function App() {
           <Route path="/userprofil" element={<Protected Cmp={UserProfil} />} />
            <Route path="/" element={<Home />} /> 
            <Route path="/rolunk" element={<About />} /> 
+           <Route path="/kategoriak" element={<Kategoriak />} /> 
+           <Route path="/kategoriak/:slug" element={<ViewCategoryProduct />} /> 
            <Route path="/kapcsolat" element={<Contact />} /> 
           <Route path="/bejelentkezes" element={<Login />} />
           <Route path="/regisztracio" element={<Register />} />

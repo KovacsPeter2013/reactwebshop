@@ -19,6 +19,9 @@ const Nav = () => {
       <li className="nav-item">
         <Link to="/kapcsolat" className="nav-link" >Kapcsolat</Link>
       </li>
+      <li className="nav-item">
+        <Link to="/kategoriak" className="nav-link" >Kategoriak</Link>
+      </li>
   
     </ul>
     <form className="form-inline my-2 my-lg-0">

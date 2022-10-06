@@ -48,24 +48,24 @@ const UserNavbar = () => {
       <li className="nav-item">
         <Link to="/" className="nav-link">Shop</Link>
       </li>
-      <li className="nav-item dropdown">
-        <Link className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <li className="nav-item dropdown ">
+        <Link className="nav-link dropdown-toggle "  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Műveletek
         </Link>
-        <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-          <Link className="dropdown-item" href="#">Action</Link>
-          <Link className="dropdown-item" href="#">Another action</Link>
-          <div className="dropdown-divider"></div>
+        <div className="dropdown-menu " aria-labelledby="navbarDropdown">
+          <Link className="dropdown-item" >Action</Link>
+          <Link className="dropdown-item" >Another action</Link>
+          <div className="dropdown-divider "></div>
           <button  onClick={logout} className="btn btbn-default">Kilépés</button>
         
         </div>
       </li>
 
     </ul>
-    <form className="form-inline my-2 my-lg-0">
+    {/* <form className="form-inline my-2 my-lg-0">
       <input className="form-control mr-sm-2" type="search" placeholder="Keresés" aria-label="Keresés" />
       <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Keresés</button>
-    </form>
+    </form> */}
   </div>
 </nav>
   )

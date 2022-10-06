@@ -4,7 +4,7 @@ import Nav from '../../layouts/frontend/Nav'
 
 const Home = () => {
   return (
-    <div className='wrapper col-md-12' >
+    <div className='container'>
 
     <Nav />
 
