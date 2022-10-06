@@ -165,19 +165,19 @@ useEffect(() => {
             
         <div className='form-group mb-3'>
                 <label>Meta cím</label>
-                    <input type="text" onChange={handleInput} value={productInput.meta_title}  name="meta_title" className='form-control'/>
+                    <input type="text" onChange={handleInput} value={productInput.meta_title}  name="meta_title" className='form-control'required/>
             </div>
 
 
         <div className='form-group mb-3'>
                 <label>Meta kulcsszavak</label>
-                    <input type="text" onChange={handleInput} value={productInput.meta_keyword}  name="meta_keyword" className='form-control'/>
+                    <input type="text" onChange={handleInput} value={productInput.meta_keyword}  name="meta_keyword" className='form-control'required/>
             </div>
 
 
         <div className='form-group mb-3'>
                 <label>Meta leírás</label>
-                    <textarea type="text" onChange={handleInput} value={productInput.meta_descrip} name="meta_descrip" className='form-control'></textarea>
+                    <textarea type="text" onChange={handleInput} value={productInput.meta_descrip} name="meta_descrip" className='form-control'required></textarea>
             </div>
             
             </div>
@@ -185,22 +185,22 @@ useEffect(() => {
             
         <div className='form-group mb-3'>
                 <label>Eredeti ár</label>
-                    <input type="text"  onChange={handleInput} value={productInput.original_price} name="original_price" className='form-control'/>
+                    <input type="text"  onChange={handleInput} value={productInput.original_price} name="original_price" className='form-control'required/>
             </div>
 
         <div className='form-group mb-3'>
                 <label>Kedvezményes ár</label>
-                    <input type="text"  onChange={handleInput} value={productInput.selling_price} name="selling_price" className='form-control'/>
+                    <input type="text"  onChange={handleInput} value={productInput.selling_price} name="selling_price" className='form-control'required/>
             </div>
 
         <div className='form-group mb-3'>
                 <label>Darabszám</label>
-                    <input type="text" onChange={handleInput} value={productInput.qty} name="qty" className='form-control'/>
+                    <input type="text" onChange={handleInput} value={productInput.qty} name="qty" className='form-control'required/>
             </div>
 
         <div className='form-group mb-3'>
                 <label>Márka</label>
-                    <input type="text" onChange={handleInput} value={productInput.brand} name="brand" className='form-control'/>
+                    <input type="text" onChange={handleInput} value={productInput.brand} name="brand" className='form-control' required/>
             </div>
 
 

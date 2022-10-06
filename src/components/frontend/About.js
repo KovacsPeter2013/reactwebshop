@@ -8,7 +8,7 @@ const About = () => {
 
     <Nav />
 
-      <h1>About</h1>
+      <h1>Rólunk</h1>
       </div>
   )
 }

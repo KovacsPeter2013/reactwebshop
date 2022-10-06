@@ -5,7 +5,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 const UserNavbar = () => {
 
-
+  const UserName = localStorage.getItem('auth_name');
 
     const logout = (e) =>{
         e.preventDefault();
@@ -32,7 +32,7 @@ const UserNavbar = () => {
 
   return (
 <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-  <Link className="navbar-brand" href="#">Navbar</Link>
+  <Link to="#" className="navbar-brand" >Üdv {UserName}!</Link>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
@@ -45,9 +45,12 @@ const UserNavbar = () => {
       <li className="nav-item">
         <Link to="/userprofil" className="nav-link">Profil</Link>
       </li>
+      <li className="nav-item">
+        <Link to="/" className="nav-link">Shop</Link>
+      </li>
       <li className="nav-item dropdown">
         <Link className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
+          Műveletek
         </Link>
         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
           <Link className="dropdown-item" href="#">Action</Link>
