@@ -19,6 +19,7 @@ import About from './components/frontend/About';
 import Contact from './components/frontend/Contact';
 import Kategoriak from './components/frontend/collections/Kategoriak';
 import ViewCategoryProduct from './components/frontend/collections/ViewCategoryProduct';
+import ProductDetails from "./components/frontend/collections/ProductDetails";
 
 
 // Request beaállítása
@@ -60,6 +61,7 @@ function App() {
            <Route path="/rolunk" element={<About />} /> 
            <Route path="/kategoriak" element={<Kategoriak />} /> 
            <Route path="/kategoriak/:slug" element={<ViewCategoryProduct />} /> 
+           <Route path="/kategoriak/:category/:product" element={<ProductDetails />} /> 
            <Route path="/kapcsolat" element={<Contact />} /> 
           <Route path="/bejelentkezes" element={<Login />} />
           <Route path="/regisztracio" element={<Register />} />

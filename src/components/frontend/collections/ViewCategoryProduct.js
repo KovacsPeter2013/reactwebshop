@@ -19,9 +19,9 @@ const ViewCategoryProduct = (props) => {
      const[product, setProduct] = useState([]);   
      const[category, setCategory] = useState([]);   
 
+    const ProductCount = product.length;
 
-
-useEffect(() => {
+    useEffect(() => {
     axios.get(`/api/fetchcategory/${categorySlug}`).then(res =>{
 
       
@@ -46,21 +46,28 @@ useEffect(() => {
 }, [])
 
     var showProductListBasedOnCategory = '';
+
+    if(ProductCount){
     showProductListBasedOnCategory = product.map((item, key) => {
         return(
-            <div className='col-md-4' key={key}>
-            <div className='card'>
-            <div className='card-body'>  
-                <Link to="">
+            <div className='col-md-4 float-left' key={key}>              
+                <Link to={`/kategoriak/${item.category.slug}/${item.slug}`}>
                 <img  src={`http://localhost:8000/${item.image}`} className="w-100" alt={item.name}/>
                 </Link>
+                <Link  to={`/kategoriak/${item.category.slug}/${item.slug}`}>
                 <h5>{item.name}</h5>
-            </div>
-            </div>
+                </Link>                
             </div>
         )
     })
+  }else{
 
+    <div className='col-md-4 float-left'>              
+
+    <h5>Jelenleg nincs termék ebben a kategóriában</h5>                
+    </div>
+    
+  }
   return (
    
     <div className='container'>
