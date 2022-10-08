@@ -20,7 +20,7 @@ import Contact from './components/frontend/Contact';
 import Kategoriak from './components/frontend/collections/Kategoriak';
 import ViewCategoryProduct from './components/frontend/collections/ViewCategoryProduct';
 import ProductDetails from "./components/frontend/collections/ProductDetails";
-
+import NotFound  from "./components/frontend/collections/NotFound";
 
 // Request beaállítása
 axios.defaults.withCredentials = true;    
@@ -45,6 +45,7 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
+<Route path="*" element={<NotFound />} />
           {/* <Route  path='/admin/dashboard/' element={<MasterLayout />}/> */}
           {/* <Route path="/admin/dashboard" element={<MasterLayout />} /> */}
           <Route path="/admin/dashboard" element={<Protected Cmp={MasterLayout} />} />
