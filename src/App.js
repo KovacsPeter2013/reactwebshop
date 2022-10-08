@@ -45,7 +45,6 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-<Route path="*" element={<NotFound />} />
           {/* <Route  path='/admin/dashboard/' element={<MasterLayout />}/> */}
           {/* <Route path="/admin/dashboard" element={<MasterLayout />} /> */}
           <Route path="/admin/dashboard" element={<Protected Cmp={MasterLayout} />} />
@@ -66,6 +65,7 @@ function App() {
            <Route path="/kapcsolat" element={<Contact />} /> 
           <Route path="/bejelentkezes" element={<Login />} />
           <Route path="/regisztracio" element={<Register />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </div>

@@ -20,7 +20,7 @@ const Nav = () => {
         <Link to="/kapcsolat" className="nav-link" >Kapcsolat</Link>
       </li>
       <li className="nav-item">
-        <Link to="/kategoriak" className="nav-link" >Kategoriak</Link>
+        <Link to="/kategoriak" className="nav-link" >Shop</Link>
       </li>
   
     </ul>

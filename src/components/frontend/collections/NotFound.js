@@ -1,12 +1,18 @@
 import React from "react";
 import Nav from "../../../layouts/frontend/Nav";
+import Footer from "./Footer";
+
+
+
+
+
 const NotFound = () => {
   return (
     <>
       <div className="container">
         <Nav />
 
-        <div className="content-wrapper" style={{marginTop: '100px'}}>
+        <div className="content-wrapper bg-white" style={{marginTop: '200px'}}>
           <section className="content-header">
             <div className="container-fluid">
               <div className="row mb-2">
@@ -34,7 +40,6 @@ const NotFound = () => {
                   <i className="fas fa-exclamation-triangle text-warning"></i>{" "}
                   Hooppá! Oldal nem található.
                 </h3>
-
                 <p>
                 Keresett oldal nem létezik
                 </p>
@@ -43,6 +48,7 @@ const NotFound = () => {
           </section>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

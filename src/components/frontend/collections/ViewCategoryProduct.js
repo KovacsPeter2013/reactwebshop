@@ -71,7 +71,7 @@ const ViewCategoryProduct = (props) => {
   return (
    
     <div className='container'>
-    <Nav />          
+           
     {showProductListBasedOnCategory}
   </div>   
     
